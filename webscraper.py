@@ -18,28 +18,22 @@ print(f"Number of countries found: {len(countries)}")
 
 with open("output.txt", 'w', newline='', encoding='utf-8') as file:
 
-      for country in countries:
-           name = country.xpath(".//h3[@class='country-name']/text()[normalize-space()]")
-           capital = country.xpath(".//span[@class='country-capital']/text()")
-           population = country.xpath(".//span[@class='country-population']/text()")
-           area =country.xpath(".//span[@class='country-area']/text()")
- 
-
-           #Etract the text from the lists or provide a default value
-           name_text = name[0].strip() if name else "N/A"
-           capital_text = capital[0].strip() if capital else "N/A"
-           population_text= population[0].strip() if population else "N/A"
-           area_text = area[0].strip() if area else "N/A"
-           print(f"name: {name_text}, capital: {capital_text}, population: {population_text} Area: {area_text}")
-        
-           #trying to write the information onto an external file; am on fire hahaha!
-           file.write(f"Name: {name_text}\n") 
-           file.write(f"Capital: {capital_text}\n") 
-           file.write(f"Population: {population_text}\n") 
-           file.write(f"Area: {area_text}\n") 
-
-          
-  
+    for country in countries:
+        name = country.xpath(".//h3[@class='country-name']/text()[normalize-space()]")
+        capital = country.xpath(".//span[@class='country-capital']/text()")
+        population = country.xpath(".//span[@class='country-population']/text()")
+        area =country.xpath(".//span[@class='country-area']/text()")
 
 
-     
+        #Etract the text from the lists or provide a default value
+        name_text = name[0].strip() if name else "N/A"
+        capital_text = capital[0].strip() if capital else "N/A"
+        population_text= population[0].strip() if population else "N/A"
+        area_text = area[0].strip() if area else "N/A"
+        print(f"name: {name_text}, capital: {capital_text}, population: {population_text} Area: {area_text}")
+    
+        #trying to write the information onto an external file; am on fire hahaha!
+        file.write(f"Name: {name_text}\n") 
+        file.write(f"Capital: {capital_text}\n") 
+        file.write(f"Population: {population_text}\n") 
+        file.write(f"Area: {area_text}\n") 
