@@ -16,6 +16,7 @@ countries = doc.xpath("//div[@class='col-md-4 country']")
 print(f"Number of countries found: {len(countries)}")
 
 # Open the csv file in write mode
+# with open("output.txt", 'w', newline='', encoding='utf-8') as file:
 with open("output.csv", 'w', newline='', encoding='utf-8') as csvfile:
     # Define the column headers for the CSV file
     fieldnames = ['Name', 'Capital', 'Population', 'Area']
@@ -42,6 +43,7 @@ with open("output.csv", 'w', newline='', encoding='utf-8') as csvfile:
         print(f"name: {name_text}, capital: {capital_text}, population: {population_text} Area: {area_text}")
     
         #trying to write the information onto an external file; am on fire hahaha!
+        # Here is a CSV format, feel free to go through it
         writer.writerow({
             'Name': name_text,
             'Capital': capital_text,
